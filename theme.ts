@@ -4,7 +4,8 @@ import { Theme } from "@emotion/react";
 const colors = {
   primary: "#29B394",
   secondary: "#F2495E",
-  white: "#ffffff"
+  white: "#ffffff",
+  dark: "#1f2e3c"
 };
 
 export interface AppTheme {

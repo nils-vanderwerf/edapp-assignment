@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import BannerImage from "../styled-components/BannerImage";
 import TopTitleComponent from "../components/TopTitleComponent";
 import TitleSection from "../styled-components/TitleSection";
+import Gap from "../styled-components/Gap";
 
 export default function Home() {
   return (
@@ -16,9 +17,10 @@ export default function Home() {
         className="banner-image-container"
         backgroundImage={"images/marley-spoon-hero-image.jpeg"}
       ></BannerImage>
-
+      <Gap />
       <div className={styles.container}>
         <TopTitleComponent />
+        <Gap />
         <p>Subtitle</p>
         <p>Image with text, image left, text right</p>
         <p>Video</p>
