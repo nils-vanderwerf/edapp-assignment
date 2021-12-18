@@ -1,9 +1,6 @@
 {
   "apiEndpoint": "https://marley-spoon-edapp-assessment.prismic.io/api/v2",
-  "libraries": [
-    "@/slices"
-  ],
-  "storybook": "http://localhost:[6666]",
-],
+  "libraries": ["@/slices"],
+  "storybook": "http://localhost:6006/",
   "_latest": "0.1.0"
 }

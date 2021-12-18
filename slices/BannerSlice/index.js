@@ -1,16 +1,17 @@
-import React from "react";
+import React, { ReactFragment as Fragment } from "react";
 import { RichText } from "prismic-reactjs";
+import { Link } from "prismic-reactjs";
 
-const BannerSlice = ({ slice }) => (
-  <>
-    {console.log("THE SLICE IS", slice)}
-    <section>
-      <img
-        src={slice.primary["hero-banner-image"].url}
-        alt={slice.primary["hero-banner-image"].alt}
-      />
+interface BannerImageProps {
+  image: string;
+}
+
+const BannerSlice: React.FC<BannerImageProps> = ({ image }) => {
+  <Fragment>
+    <section className="homepage-banner">
+      <div className="banner-content container">
+        <img src={image} alt={slice.primary["hero-banner-image"].alt} />
+      </div>
     </section>
-  </>
-);
-
-export default BannerSlice;
+  </Fragment>;
+};
