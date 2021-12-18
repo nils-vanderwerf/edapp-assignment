@@ -25,20 +25,20 @@ const Navbar: FC<NavbarProps> = ({
     : defaultLinks;
 
   return (
-    <Header>
-      <div>
-        <Link href="/">
-          <Brand>{brand}</Brand>
-        </Link>
-        <Nav>
-          {links.map((link, index) => (
-            <Link key={index} href={link.href}>
-              <a>{link.label}</a>
-            </Link>
-          ))}
-        </Nav>
-      </div>
-    </Header>
+    <header className="navbar-menu">
+      <ul className="nav-bar">
+        <Link href="/">Features</Link>
+        <Link href="/">A Mobile LMS</Link>
+        <Link href="/">Course Library</Link>
+        <Link href="/">Industries</Link>
+        <Link href="/">Educate All</Link>
+        <Link href="/">Support</Link>
+        <Link href="/">Testimonials</Link>
+        <Link href="/">Pricing</Link>
+        <Link href="/">Log In</Link>
+        <Link href="/">Sign Up Free</Link>
+      </ul>
+    </header>
   );
 };
 
