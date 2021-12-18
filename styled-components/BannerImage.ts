@@ -7,7 +7,7 @@ export interface StyledImageProps {
 const BannerImage = styled.div<StyledImageProps>`
   background-image: url(${(props) => props.backgroundImage});
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   width: 100%;
   height: 450px;
