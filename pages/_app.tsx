@@ -1,4 +1,5 @@
 import { Global, ThemeProvider } from "@emotion/react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import type { AppProps } from "next/app";
 import { globalStyles } from "../styles";
 import theme from "../theme";
