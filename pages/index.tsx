@@ -10,6 +10,8 @@ import Gap from "../styled-components/Gap";
 import BannerImageTextLeft from "../styled-components/BannerWithTextLeftStyles";
 import BannerImageTextRight from "../components/BannerImageTextRight";
 import BannerWithTextRightStyles from "../styled-components/BannerWithTextRightStyles";
+import BannerSlice from "../slices/BannerSlice";
+import EmbeddedVideo from "../components/EmbeddedVideo";
 
 const contentSections = [
   {
@@ -20,9 +22,8 @@ const contentSections = [
           Marley Spoon typically onboards new staff with face-to-face training,
           complemented by surveys. Since COVID-19, however, more people opted to
           order fresh ingredients to their doors, which resulted in a tremendous
-          surge in demand
+          surge in demand.
         </p>
-        .
         <p>
           As an essential business provider, Marley Spoon was able to hire the
           largest amount of staff in the smallest amount of time on record.
@@ -56,9 +57,12 @@ export default function Home() {
           <BannerImageTextRight content={contentSections[0].content} />
         </div>
       </BannerWithTextRightStyles>
-      <p>Subtitle</p>
-      <p>Image with text, image left, text right</p>
-      <p>Video</p>
+      <Gap />
+      <EmbeddedVideo
+        width="893"
+        height="502"
+        embedId="https://www.youtube.com/embed/8J0QZndZU1U"
+      />
       <p>Image with text, text left image right</p>
       <p>Centred text on top of image, including quote</p>
       <p>Pink Image with text, image left, text right</p>
