@@ -7,8 +7,12 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #000;
   text-decoration: none;
+}
+
+a:hover {
+  color: #46b4e9;
 }
 
 blockquote.text-lg {

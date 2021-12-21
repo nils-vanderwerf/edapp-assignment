@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 const CenteredTextStyles = styled.div`
   margin: auto;
+  padding-bottom: 40px;
   & figcaption {
     text-align: right;
   }

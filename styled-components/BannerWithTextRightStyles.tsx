@@ -5,7 +5,7 @@ const BannerWithTextRightStyles = styled(BannerImage)`
   display: flex;
   text-align: center;
   align-items: center;
-  & .left-aligned {
+  & .right-aligned {
     margin-left: auto;
   }
 `;

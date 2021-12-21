@@ -14,7 +14,7 @@ const CenteredTextContent: FC<ImageContentProps> = ({
   return (
     <>
       <div className="container">
-        <img src={image} alt={alt} />
+        {image && alt && <img src={image} alt={alt} />}
         {content}
       </div>
     </>

@@ -11,8 +11,22 @@ const BannerImage = styled.div<StyledImageProps>`
   background-position: center;
   width: 100%;
   height: 450px;
-  @media all and (max-width: 720px) {
-    width: 100vw;
+  & blockquote {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  & blockquote::before {
+    color: #fff;
+    content: '"';
+    margin-right: 10px;
+    font-size: 1.333rem;
+  }
+  @media all and (max-width: 768px) {
+    & .container.block-dark {
+      max-width: 100vw;
+      width: 100vw;
+    }
     & .block-dark {
       display: flex;
       background-color: rgba(0, 0, 0, 0.7);
@@ -22,9 +36,6 @@ const BannerImage = styled.div<StyledImageProps>`
     }
   }
   @media (max-width: 576px) {
-    .container,
-    .container-sm {
-      max-width: 100%;
       & .left-aligned,
       & .right-aligned {
         max-width: 90%;
