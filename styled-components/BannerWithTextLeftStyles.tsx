@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
-import { StyledImageProps } from "./BannerImage";
+import BannerImage from "./BannerImage";
 
-export interface BannerTextLeftProps extends StyledImageProps {
-  text: string;
-}
-
-const BannerImageTextLeftStyles = styled.div<BannerTextLeftProps>`
+const BannerWithTextLeftStyles = styled(BannerImage)`
   display: flex;
-  margin-left: auto;
+  text-align: center;
+  align-items: center;
+  & .right-aligned {
+    margin-right: auto;
+  }
 `;
 
-export default BannerImageTextLeftStyles;
+export default BannerWithTextLeftStyles;

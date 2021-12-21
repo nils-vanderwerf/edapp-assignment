@@ -7,9 +7,10 @@ import BannerImage from "../styled-components/BannerImage";
 import TopTitleComponent from "../components/TopTitleComponent";
 import TitleSection from "../styled-components/TitleSection";
 import Gap from "../styled-components/Gap";
-import BannerImageTextLeft from "../styled-components/BannerWithTextLeftStyles";
-import BannerImageTextRight from "../components/BannerImageTextRight";
+import BannerTextImageComponent from "../components/BannerTextImageConponent";
+import BannerWithTextLeftStyles from "../styled-components/BannerWithTextLeftStyles";
 import BannerWithTextRightStyles from "../styled-components/BannerWithTextRightStyles";
+
 import BannerSlice from "../slices/BannerSlice";
 import EmbeddedVideo from "../components/EmbeddedVideo";
 
@@ -30,6 +31,21 @@ const contentSections = [
           Since classroom training was no longer a viable option, Marley Spoon
           required a solution that could easily onboard and train their hundreds
           of new team members efficiently and effectively.
+        </p>
+      </div>
+    )
+  },
+  {
+    content: (
+      <div className="col-md-5 col-md-offset-7 text-center right-aligned">
+        <h2>Deploying lesson content quickly and easily</h2>
+        <p>
+          EdApp facilitated Marley Spoon’s influx of new starters by reaching
+          and training every new team member on crucial information. Before the
+          implementation of EdApp, this would not have been possible to achieve
+          at scale and in such a short period of time. While representing Marley
+          Spon’s strong brand identity, EdApp enabled the delivery of vital
+          information like food safety and procedures.
         </p>
       </div>
     )
@@ -54,15 +70,20 @@ export default function Home() {
         backgroundImage={"images/yellowBackground.jpeg"}
       >
         <div className={styles.container}>
-          <BannerImageTextRight content={contentSections[0].content} />
+          <BannerTextImageComponent content={contentSections[0].content} />
         </div>
       </BannerWithTextRightStyles>
       <Gap />
       <EmbeddedVideo
         width="893"
-        height="502"
         embedId="https://www.youtube.com/embed/8J0QZndZU1U"
       />
+      <Gap />
+      <BannerWithTextLeftStyles backgroundImage={"images/greyBackground.jpeg"}>
+        <div className={styles.container}>
+          <BannerTextImageComponent content={contentSections[1].content} />
+        </div>
+      </BannerWithTextLeftStyles>
       <p>Image with text, text left image right</p>
       <p>Centred text on top of image, including quote</p>
       <p>Pink Image with text, image left, text right</p>
