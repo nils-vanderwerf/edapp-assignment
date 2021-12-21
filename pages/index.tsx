@@ -18,6 +18,8 @@ import HalfImageText from "../components/HalfImageText";
 import HalfTextImageStyles from "../styled-components/HalfTextImageStyles";
 import SignupBlock from "../components/SignupBlock";
 import SignupBlockStyles from "../styled-components/SignupBlockStyles";
+import WhyEdApp from "../components/WhyEdApp";
+import WhyEdAppStyles from "../styled-components/WhyEdAppStyles";
 const contentSections = [
   {
     content: (
@@ -128,6 +130,30 @@ const contentSections = [
     )
   }
 ];
+
+const benefits = [
+  {
+    image: "images/rapid-authoring.v1.001-2x.jpg",
+    alt: "rapid authoring tool",
+    heading: "World-class Authoring Tool",
+    paragraph:
+      "Create lessons on EdApp’s	intuitive and incredibly agile platform in days. Choose from 2 template libraries, full of completely free and ready-made content ready for you to quickly edit, brand, and deploy. No prior technical knowledge needed. it’s a smartphone, tablet or laptop."
+  },
+  {
+    image: "images/growth-millenials-workplace-2x.jpeg",
+    alt: "Mobile-first microlearning",
+    heading: "Mobile-first microlearning",
+    paragraph:
+      "Deliver a learning strategy that provides the best learning outcomes with microlearning. Leverage interactive, built-in features guaranteed to boost engagement and completion rates. Deploy your bespoke content to your teams directly to their personal mobile devices, where they can easily access and complete lessons in small digestible chunks."
+  },
+  {
+    image: "images/flexible-personal-learning-2x.jpeg",
+    alt: "Flexible eLearning",
+    heading: "Better learning outcomes",
+    paragraph:
+      "Experience completion rates beyond 90% compared to rates as low as 15% from traditional eLearning platforms. Apply features like spaced repetition and gamification to make learning fun and enjoyable while simultaneously increasing retention and creating a continuous learning experience."
+  }
+];
 export default function Home() {
   return (
     <Fragment>
@@ -203,6 +229,39 @@ export default function Home() {
           <SignupBlock />
         </div>
       </SignupBlockStyles>
+      <Gap />
+      <h2>Why EdApp</h2>
+      <Gap />
+      <WhyEdAppStyles>
+        <div className="container d-flex">
+          <div className="col-sm-4">
+            <WhyEdApp
+              image={benefits[0].image}
+              alt={benefits[0].alt}
+              heading={benefits[0].heading}
+              paragraph={benefits[0].paragraph}
+            />
+          </div>
+          <div className="col-sm-4">
+            <WhyEdApp
+              image={benefits[1].image}
+              alt={benefits[1].alt}
+              heading={benefits[1].heading}
+              paragraph={benefits[1].paragraph}
+            />
+          </div>
+          <div className="col-sm-4">
+            <WhyEdApp
+              image={benefits[2].image}
+              alt={benefits[2].alt}
+              heading={benefits[2].heading}
+              paragraph={benefits[2].paragraph}
+            />
+          </div>
+        </div>
+      </WhyEdAppStyles>
+      <Gap />
+
       <p>Why EdApp, repetable testamonials</p>
       <p>Explore more, 2 col</p>
       <p>Centred text on dark background, pnk to book a demo (repeat)</p>
