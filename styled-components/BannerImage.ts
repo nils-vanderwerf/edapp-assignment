@@ -21,7 +21,7 @@ const BannerImage = styled.div<StyledImageProps>`
       align-items: center;
     }
   }
-  @media (min-width: 576px) {
+  @media (max-width: 576px) {
     .container,
     .container-sm {
       max-width: 100%;

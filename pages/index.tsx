@@ -6,11 +6,12 @@ import BannerImage from "../styled-components/BannerImage";
 import TopTitleComponent from "../components/TopTitleComponent";
 import TitleSection from "../styled-components/TitleSection";
 import Gap from "../styled-components/Gap";
-import BannerTextImageComponent from "../components/BannerTextImageConponent";
+import BannerTextImageComponent from "../components/BannerTextImageComponent";
 import BannerWithTextLeftStyles from "../styled-components/BannerWithTextLeftStyles";
 import BannerWithTextRightStyles from "../styled-components/BannerWithTextRightStyles";
 import VideoStyles from "../styled-components/VideoStyles";
-
+import CenteredTextContent from "../components/CenteredTextContent";
+import CenteredTextStyles from "../styled-components/CentredTextStyles";
 import BannerSlice from "../slices/BannerSlice";
 import EmbeddedVideo from "../components/EmbeddedVideo";
 
@@ -49,6 +50,19 @@ const contentSections = [
         </p>
       </div>
     )
+  },
+  {
+    content: (
+      <figure>
+        <blockquote className="text-lg">
+          EdApp allows for a more modern learning approach where our learners
+          and our team members can access the materials anytime, anywhere.
+        </blockquote>
+        <figcaption>
+          - Aga Strzemeska, Head of People Operations, Marley Spoon
+        </figcaption>
+      </figure>
+    )
   }
 ];
 export default function Home() {
@@ -86,6 +100,14 @@ export default function Home() {
           <BannerTextImageComponent content={contentSections[1].content} />
         </div>
       </BannerWithTextLeftStyles>
+      <Gap />
+      <CenteredTextStyles>
+        <CenteredTextContent
+          image="images/cutlery.png"
+          alt="cutlery"
+          content={contentSections[2].content}
+        />
+      </CenteredTextStyles>
       <p>Image with text, text left image right</p>
       <p>Centred text on top of image, including quote</p>
       <p>Pink Image with text, image left, text right</p>

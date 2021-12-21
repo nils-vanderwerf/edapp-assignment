@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+blockquote.text-lg {
+  font-size: 24px;
+}
+
 * {
   box-sizing: border-box;
 }
