@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import Brand from "../styled-components/Brand";
 import Header from "../styled-components/Header";
 import Nav from "../styled-components/Nav";
+import styles from "../styles";
 
 interface NavbarLink {
   label: string;
@@ -37,7 +38,7 @@ const Navbar: FC<NavbarProps> = ({
 
   return (
     <Header>
-      <div>
+      <div className="container">
         <Link href="/">
           <Brand>{brand}</Brand>
         </Link>

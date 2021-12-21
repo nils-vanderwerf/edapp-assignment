@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import BannerImage from "../styled-components/BannerImage";
 import TopTitleComponent from "../components/TopTitleComponent";
@@ -10,6 +9,7 @@ import Gap from "../styled-components/Gap";
 import BannerTextImageComponent from "../components/BannerTextImageConponent";
 import BannerWithTextLeftStyles from "../styled-components/BannerWithTextLeftStyles";
 import BannerWithTextRightStyles from "../styled-components/BannerWithTextRightStyles";
+import VideoStyles from "../styled-components/VideoStyles";
 
 import BannerSlice from "../slices/BannerSlice";
 import EmbeddedVideo from "../components/EmbeddedVideo";
@@ -54,7 +54,7 @@ const contentSections = [
 export default function Home() {
   return (
     <Fragment>
-      <div className={styles.container}>
+      <div className="container">
         <Navbar />
       </div>
       <BannerImage
@@ -62,25 +62,27 @@ export default function Home() {
         backgroundImage={"images/marley-spoon-hero-image.jpeg"}
       ></BannerImage>
       <Gap />
-      <div className={styles.container}>
+      <div className="container">
         <TopTitleComponent />
         <Gap />
       </div>
       <BannerWithTextRightStyles
         backgroundImage={"images/yellowBackground.jpeg"}
       >
-        <div className={styles.container}>
+        <div className="container block-dark">
           <BannerTextImageComponent content={contentSections[0].content} />
         </div>
       </BannerWithTextRightStyles>
       <Gap />
-      <EmbeddedVideo
-        width="893"
-        embedId="https://www.youtube.com/embed/8J0QZndZU1U"
-      />
+      <VideoStyles>
+        <EmbeddedVideo
+          width="893"
+          embedId="https://www.youtube.com/embed/8J0QZndZU1U"
+        />
+      </VideoStyles>
       <Gap />
       <BannerWithTextLeftStyles backgroundImage={"images/greyBackground.jpeg"}>
-        <div className={styles.container}>
+        <div className="container block-dark">
           <BannerTextImageComponent content={contentSections[1].content} />
         </div>
       </BannerWithTextLeftStyles>
