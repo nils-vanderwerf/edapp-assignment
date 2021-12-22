@@ -10,9 +10,10 @@ const BannerImage = styled.div<StyledImageProps>`
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 450px;
+  min-height: 450px;
   & blockquote {
     font-size: 24px;
+    padding: 40px 0;
     text-align: left;
   }
 

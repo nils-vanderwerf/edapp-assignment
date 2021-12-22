@@ -23,14 +23,12 @@ import WhyEdApp from "../components/WhyEdApp";
 import WhyEdAppStyles from "../styled-components/WhyEdAppStyles";
 import AutoHeightWithPadding from "../styled-components/AutoHeightWithPadding";
 import ExploreMore from "../components/explore/ExploreMore";
-interface IndexProps {
-  categories: any;
-}
+import Footer from "../components/Footer";
+import StyledFooter from "../styled-components/StyledFooter";
 
 console.log(benefits);
 
-const Index: FC<IndexProps> = ({ categories }) => {
-  console.log("EXPLORE");
+const Index = () => {
   return (
     <Fragment>
       <div className="container">
@@ -145,7 +143,12 @@ const Index: FC<IndexProps> = ({ categories }) => {
           <SignupBlock />
         </div>
       </SignupBlockStyles>
-      <p>Footer - 4 Columns</p>
+      <Gap />
+      <StyledFooter>
+        <div className="container d-flex">
+          <Footer />
+        </div>
+      </StyledFooter>
     </Fragment>
   );
 };
