@@ -1,10 +1,12 @@
 import React, { Fragment } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+import contentSections from "../content/contentSections";
+import benefits from "../content/benefits";
 import Navbar from "../components/Navbar";
 import BannerImage from "../styled-components/BannerImage";
 import TopTitleComponent from "../components/TopTitleComponent";
-import TitleSection from "../styled-components/TitleSection";
 import Gap from "../styled-components/Gap";
 import BannerTextImageComponent from "../components/BannerTextImageComponent";
 import BannerWithTextLeftStyles from "../styled-components/BannerWithTextLeftStyles";
@@ -12,7 +14,6 @@ import BannerWithTextRightStyles from "../styled-components/BannerWithTextRightS
 import VideoStyles from "../styled-components/VideoStyles";
 import CenteredTextContent from "../components/CenteredTextContent";
 import CenteredTextStyles from "../styled-components/CentredTextStyles";
-import BannerSlice from "../slices/BannerSlice";
 import EmbeddedVideo from "../components/EmbeddedVideo";
 import HalfImageText from "../components/HalfImageText";
 import HalfTextImageStyles from "../styled-components/HalfTextImageStyles";
@@ -20,141 +21,16 @@ import SignupBlock from "../components/SignupBlock";
 import SignupBlockStyles from "../styled-components/SignupBlockStyles";
 import WhyEdApp from "../components/WhyEdApp";
 import WhyEdAppStyles from "../styled-components/WhyEdAppStyles";
-const contentSections = [
-  {
-    content: (
-      <div className="col-md-5 col-md-offset-7 text-center right-aligned">
-        <h2>Onboarding hundreds of new team members during COVID-19</h2>
-        <p>
-          Marley Spoon typically onboards new staff with face-to-face training,
-          complemented by surveys. Since COVID-19, however, more people opted to
-          order fresh ingredients to their doors, which resulted in a tremendous
-          surge in demand.
-        </p>
-        <p>
-          As an essential business provider, Marley Spoon was able to hire the
-          largest amount of staff in the smallest amount of time on record.
-          Since classroom training was no longer a viable option, Marley Spoon
-          required a solution that could easily onboard and train their hundreds
-          of new team members efficiently and effectively.
-        </p>
-      </div>
-    )
-  },
-  {
-    content: (
-      <div className="col-md-5 col-md-offset-7 text-center left-aligned">
-        <h2>Deploying lesson content quickly and easily</h2>
-        <p>
-          EdApp facilitated Marley Spoon’s influx of new starters by reaching
-          and training every new team member on crucial information. Before the
-          implementation of EdApp, this would not have been possible to achieve
-          at scale and in such a short period of time. While representing Marley
-          Spon’s strong brand identity, EdApp enabled the delivery of vital
-          information like food safety and procedures.
-        </p>
-      </div>
-    )
-  },
-  {
-    content: (
-      <figure>
-        <blockquote className="text-lg">
-          EdApp allows for a more modern learning approach where our learners
-          and our team members can access the materials anytime, anywhere.
-        </blockquote>
-        <figcaption>
-          - Aga Strzemeska, Head of People Operations, Marley Spoon
-        </figcaption>
-      </figure>
-    )
-  },
-  {
-    content: (
-      <div className="col-md-5 col-md-offset-7 text-center right-aligned">
-        <h2>An enhanced learning experience with EdApp</h2>
-        <p>
-          Marley Spoon has a large number of team members, who are divided into
-          various sub-departments, meaning certain courses are targetted to
-          train specific groups. Utilising EdApp’s{" "}
-          <a href="https://www.edapp.com/lms-features/">features</a> like User
-          Groups and Push Notifications has enabled Marley Spoon to easily
-          create and share content with these unique groups. When new content is
-          ready, learners are notified in real-time with a push notification,
-          sent straight to their mobile devices. Marley Spoon also incentivises
-          its team members through EdApp’s built-in prizing feature. It sparks
-          some friendly competition and winners are rewarded with real prizes.
-        </p>
-        <blockquote className="text-lg">
-          Having our content on EdApp has made it more engaging, more fun, and
-          more interactive.
-        </blockquote>
-      </div>
-    )
-  },
-  {
-    content: (
-      <>
-        <div className="col-md-5 col-md-offset-7 text-center left-aligned"></div>
-        <h2>
-          Why EdApp works for the food delivery and food manufacturing
-          industries
-        </h2>
-        <p>
-          For companies like Marley Spoon who are dealing with food, health and
-          safety is always a priority. EdApp microlessons allow learners to
-          complete important lessons anytime, anywhere in small, digestible
-          chunks. What’s more, content can be revisited regularly to ensure
-          processes are completed and, more importantly, understood.
-        </p>
-        <p>
-          Whether employees are on-site at production centres, out delivering
-          product or at the office, dispersed teams can complete their EdApp
-          microlessons in five minutes or so, and revisit when it suits them.
-          Lessons can be created, edited, and deployed to cohorts ensuring that
-          all team members have the most up-to-date content at all times. The
-          best part? All this can be done on learners’ mobile devices.
-        </p>
-      </>
-    )
-  },
-  {
-    content: (
-      <figure>
-        <blockquote className="text-lg">
-          Food business and manufacturing are very fast-paced environments. So
-          having a product [like EdApp] that can keep up with these changes is
-          extremely valuable.
-        </blockquote>
-      </figure>
-    )
-  }
-];
+import AutoHeightWithPadding from "../styled-components/AutoHeightWithPadding";
+import ExploreMore from "../components/explore/ExploreMore";
+interface IndexProps {
+  categories: any;
+}
 
-const benefits = [
-  {
-    image: "images/rapid-authoring.v1.001-2x.jpg",
-    alt: "rapid authoring tool",
-    heading: "World-class Authoring Tool",
-    paragraph:
-      "Create lessons on EdApp’s	intuitive and incredibly agile platform in days. Choose from 2 template libraries, full of completely free and ready-made content ready for you to quickly edit, brand, and deploy. No prior technical knowledge needed. it’s a smartphone, tablet or laptop."
-  },
-  {
-    image: "images/growth-millenials-workplace-2x.jpeg",
-    alt: "Mobile-first microlearning",
-    heading: "Mobile-first microlearning",
-    paragraph:
-      "Deliver a learning strategy that provides the best learning outcomes with microlearning. Leverage interactive, built-in features guaranteed to boost engagement and completion rates. Deploy your bespoke content to your teams directly to their personal mobile devices, where they can easily access and complete lessons in small digestible chunks."
-  },
-  {
-    image: "images/flexible-personal-learning-2x.jpeg",
-    alt: "Flexible eLearning",
-    heading: "Better learning outcomes",
-    paragraph:
-      "Experience completion rates beyond 90% compared to rates as low as 15% from traditional eLearning platforms. Apply features like spaced repetition and gamification to make learning fun and enjoyable while simultaneously increasing retention and creating a continuous learning experience."
-  }
-];
-export default function Home() {
+console.log(benefits);
+
+const Index: FC<IndexProps> = ({ categories }) => {
+  console.log("EXPLORE");
   return (
     <Fragment>
       <div className="container">
@@ -181,6 +57,7 @@ export default function Home() {
       <VideoStyles>
         <EmbeddedVideo
           width="893"
+          height="502"
           embedId="https://www.youtube.com/embed/8J0QZndZU1U"
         />
       </VideoStyles>
@@ -199,13 +76,12 @@ export default function Home() {
         />
       </CenteredTextStyles>
       <Gap />
-      <BannerWithTextRightStyles
-        style={{ height: "auto", padding: "40px 0" }}
-        backgroundImage={"images/pinkBackground.jpeg"}
-      >
-        <div className="container block-dark">
-          <BannerTextImageComponent content={contentSections[3].content} />
-        </div>
+      <BannerWithTextRightStyles backgroundImage={"images/pinkBackground.jpeg"}>
+        <AutoHeightWithPadding>
+          <div className="container block-dark">
+            <BannerTextImageComponent content={contentSections[3].content} />
+          </div>
+        </AutoHeightWithPadding>
       </BannerWithTextRightStyles>
       <Gap />
       <HalfTextImageStyles>
@@ -234,7 +110,7 @@ export default function Home() {
       <Gap />
       <WhyEdAppStyles>
         <div className="container d-flex">
-          <div className="col-sm-4">
+          <div className="col xs-12 col-sm-4">
             <WhyEdApp
               image={benefits[0].image}
               alt={benefits[0].alt}
@@ -242,7 +118,7 @@ export default function Home() {
               paragraph={benefits[0].paragraph}
             />
           </div>
-          <div className="col-sm-4">
+          <div className="col-xs-12 col-sm-4">
             <WhyEdApp
               image={benefits[1].image}
               alt={benefits[1].alt}
@@ -250,7 +126,7 @@ export default function Home() {
               paragraph={benefits[1].paragraph}
             />
           </div>
-          <div className="col-sm-4">
+          <div className="col-xs-12 col-sm-4">
             <WhyEdApp
               image={benefits[2].image}
               alt={benefits[2].alt}
@@ -262,10 +138,16 @@ export default function Home() {
       </WhyEdAppStyles>
       <Gap />
 
-      <p>Why EdApp, repetable testamonials</p>
-      <p>Explore more, 2 col</p>
-      <p>Centred text on dark background, pnk to book a demo (repeat)</p>
+      <ExploreMore />
+      <Gap />
+      <SignupBlockStyles>
+        <div className="container">
+          <SignupBlock />
+        </div>
+      </SignupBlockStyles>
       <p>Footer - 4 Columns</p>
     </Fragment>
   );
-}
+};
+
+export default Index;

@@ -1,7 +1,10 @@
 import styled from "@emotion/styled";
 const WhyEdAppStyles = styled.div`
-  display: flex;
-  gap: 20px;
+  & .container {
+    display: flex;
+    gap: 20px;
+    
+  }
   p,
   h3 {
     text-align: center;
@@ -14,6 +17,15 @@ const WhyEdAppStyles = styled.div`
     margin: auto;
     margin-bottom: 30px;
   }
+@media all and (max-width: 768px) {
+  & .container {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+& .container > .col-sm-4 {
+  margin-bottom: 40px; 
+  
+}
 `;
 
 export default WhyEdAppStyles;
